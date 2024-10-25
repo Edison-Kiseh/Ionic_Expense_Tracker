@@ -4,6 +4,7 @@ import { PieChartComponent } from "../pie-chart/pie-chart.component";
 import { ColourPickerComponent } from '../colour-picker/colour-picker.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ExpenseModel } from 'src/models/expense.model';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomePage {
   showColorPicker: boolean = false;
-  buttonText: string = 'Show color picker'
+  buttonText: string = 'Show color picker';
+  expenseList: ExpenseModel[] = [];
 
   constructor() {}
 
@@ -27,5 +29,9 @@ export class HomePage {
     else{
       this.buttonText = 'Show color picker';
     }
+  }
+
+  updateExpenseList(): void {
+    
   }
 }

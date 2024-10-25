@@ -103,7 +103,7 @@ export class PieChartComponent  implements AfterViewInit {
   addPiechartSlice(){
     if(parseInt(this.inputNum)){
       const newColor = this.colorService.getColour();
-      this.colorService.selectedColour = 'FFFFFF'
+      this.colorService.selectedColour = 'grey'
       //adding the value to the values array
       this.values.push(parseInt(this.inputNum));
       //adding the selected color to the colors array

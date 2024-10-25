@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class ColourPickerComponent  implements OnInit {
-  defaultColor: string = '#FFFFFF'; // Default color
+  defaultColor: string = 'grey'; // Default color
 
   constructor(private colorService: ColorPickerService) { }
 
@@ -25,7 +25,7 @@ export class ColourPickerComponent  implements OnInit {
     }
     else{
       this.colorService.setColour(this.defaultColor);
-      console.log('Selected color:', this.defaultColor);
+      console.log('Set default color:', this.defaultColor);
     }
   }
 
