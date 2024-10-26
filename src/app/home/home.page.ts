@@ -6,12 +6,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ExpenseModel } from 'src/models/expense.model';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, PieChartComponent, ColourPickerComponent, CommonModule, FormsModule],
+  imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent,  PieChartComponent],
 })
 export class HomePage {
   showColorPicker: boolean = false;
