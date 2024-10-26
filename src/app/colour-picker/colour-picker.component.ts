@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonCol, IonTitle, IonHeader, IonToolbar, IonGrid, IonRow } from "@ionic/angular/standalone";
+import { ColorPickerService } from '../color-picker.service';
 
 @Component({
   selector: 'app-colour-picker',
@@ -11,8 +12,7 @@ import { IonCol, IonTitle, IonHeader, IonToolbar, IonGrid, IonRow } from "@ionic
 export class ColourPickerComponent  implements OnInit {
   defaultColor: string = 'grey'; // Default color
 
-
-  constructor() { }
+  constructor(private colorService: ColorPickerService) { }
 
   ngOnInit() {}
 

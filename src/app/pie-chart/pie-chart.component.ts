@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ColorPickerService } from '../color-picker.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -22,7 +23,7 @@ export class PieChartComponent  implements AfterViewInit {
   x: number = 0;
   y: number = 0;
 
-  constructor() { }
+  constructor(private colourService: ColorPickerService) { }
 
   ngAfterViewInit() {
     const canvas = this.canvasRef.nativeElement;
@@ -101,10 +102,12 @@ export class PieChartComponent  implements AfterViewInit {
 
   addPiechartSlice(){
     if(parseInt(this.inputNum)){
-      const newColor = this.colorService.getColour();
-      this.colorService.selectedColour = 'grey'
+      const newColor = this.colourService.getColour();
+      this.colourService.selectedColour = 'grey'
       //adding the value to the values array
       this.values.push(parseInt(this.inputNum));
+      //add the color
+      this.colors.push(newColor);
       // Recalculate the sum of the values
       this.calculateSum();
       // Then update the slices once more

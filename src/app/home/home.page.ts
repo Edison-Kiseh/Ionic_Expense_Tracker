@@ -12,7 +12,7 @@ import { ExpenseModel } from 'src/models/expense.model';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent,  PieChartComponent],
+  imports: [IonRouterOutlet, IonHeader, IonToolbar, IonTitle, IonContent, PieChartComponent, ColourPickerComponent, CommonModule, FormsModule],
 })
 export class HomePage {
   showColorPicker: boolean = false;
