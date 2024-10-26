@@ -9,15 +9,22 @@ import { IonCol, IonTitle, IonHeader, IonToolbar, IonGrid, IonRow } from "@ionic
   standalone: true,
 })
 export class ColourPickerComponent  implements OnInit {
-  selectedColor: string = '#FFFFFF'; // Default color
+  defaultColor: string = 'grey'; // Default color
+
 
   constructor() { }
 
   ngOnInit() {}
 
   setColor(color: string) {
-    this.selectedColor = color;
-    console.log('Selected color:', this.selectedColor);
+    if(color){
+      this.colorService.setColour(color);
+      console.log('Selected color:', color);
+    }
+    else{
+      this.colorService.setColour(this.defaultColor);
+      console.log('Set default color:', this.defaultColor);
+    }
   }
 
 }
